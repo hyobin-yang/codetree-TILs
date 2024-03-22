@@ -9,10 +9,12 @@ public class Main {
         for (int i=1; i<=n; i++){
             for (int j=1; j<=i; j++){
                 if ((char)cnt == 'Z'){
+                    System.out.print((char)cnt);
                     cnt = 65;
+                } else{
+                    System.out.print((char)cnt);
+                    cnt ++;
                 }
-                System.out.print((char)cnt);
-                cnt ++;
             }
             System.out.println();
         }
