@@ -14,7 +14,7 @@ public class Main {
             } else if (a.charAt(i) != a.charAt(i-1)){
                 result += a.charAt(i-1) + Integer.toString(cnt);
                 cnt = 1;
-            } else if (a.charAt(i) == a.charAt(i-1)){
+            } else if (i == a.length()-1 && a.charAt(i) == a.charAt(i-1)){
                 cnt ++;
                 result += a.charAt(i) + Integer.toString(cnt);
             } else{
