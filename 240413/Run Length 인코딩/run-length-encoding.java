@@ -17,7 +17,8 @@ public class Main {
             } else if (i == a.length()-1 && a.charAt(i) == a.charAt(i-1)){
                 cnt ++;
                 result += a.charAt(i) + Integer.toString(cnt);
-            } else if (i == a.length()-1){
+            } else{
+                result += a.charAt(i-1) + Integer.toString(cnt);
                 result += a.charAt(i) + "1";
             }
         }
