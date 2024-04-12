@@ -6,8 +6,13 @@ public class Main {
         String s = sc.next();
         int n = sc.nextInt();
 
-        for (int i=s.length()-1; i>=s.length()-n; i--){
-            System.out.print(s.charAt(i));
+        if (n>s.length()){
+            System.out.print(s);
+        } else{
+            for (int i=s.length()-1; i>=s.length()-n; i--){
+                System.out.print(s.charAt(i));
+            }
         }
+        
     }
 }
