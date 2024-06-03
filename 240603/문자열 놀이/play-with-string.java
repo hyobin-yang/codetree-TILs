@@ -12,17 +12,21 @@ public class Main {
         for (int i=0; i<q; i++){
             n = sc.nextInt();
 
+            String new_s = "";
             if (n == 1){
-                String new_s = "";
                 int a = sc.nextInt();
                 int b = sc.nextInt();
                 a -= 1;
                 b -= 1;
-                new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1) +s.substring(b+1, s.length());
+                if (b == s.length()-1){
+                    new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1);
+                } else{
+                    new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1) + s.substring(b+1, s.length());
+
+                }
                 System.out.println(new_s);
                 s = new_s;
             } else{
-                String new_s = "";
                 String a = sc.next();
                 String b = sc.next();
                 for (int j=0; j<s.length(); j++){
@@ -34,8 +38,7 @@ public class Main {
                 }
                 System.out.println(new_s);
                 s = new_s;
-
-            }       
+            }
         }
     }
 }
