@@ -7,9 +7,10 @@ public class Main {
 
         String s = sc.next();
         int q = sc.nextInt();
+        int n;
 
         for (int i=0; i<q; i++){
-            int n = sc.nextInt();
+            n = sc.nextInt();
 
             if (n == 1){
                 String new_s = "";
@@ -20,9 +21,7 @@ public class Main {
                 new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1) +s.substring(b+1, s.length());
                 System.out.println(new_s);
                 s = new_s;
-
-            }
-            if (n==2){
+            } else{
                 String new_s = "";
                 String a = sc.next();
                 String b = sc.next();
