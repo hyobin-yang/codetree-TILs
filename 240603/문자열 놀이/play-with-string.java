@@ -18,11 +18,15 @@ public class Main {
                 int b = sc.nextInt();
                 a -= 1;
                 b -= 1;
-                if (b == s.length()-1){
-                    new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1);
-                } else{
+                // if (b == s.length()-1){
+                //     new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1);
+                // } else{
+                //     new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1) + s.substring(b+1, s.length());
+                // }
+                if (a<b){
                     new_s += s.substring(0, a) + s.substring(b, b+1) + s.substring(a+1, b) + s.substring(a, a+1) + s.substring(b+1, s.length());
-
+                } else{
+                    new_s += s.substring(0, b) + s.substring(a, a+1) + s.substring(b+1, a) + s.substring(b, b+1) + s.substring(a+1, s.length());
                 }
                 System.out.println(new_s);
                 s = new_s;
