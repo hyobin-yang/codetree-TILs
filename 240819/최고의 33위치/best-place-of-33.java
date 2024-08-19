@@ -1,50 +1,47 @@
 import java.util.Scanner;
 
-public class Main {
-    public static final int MAX_N = 20;
+public class Main{
 
+    public static int max;
     public static int n;
-    public static int[][] grid = new int[MAX_N][MAX_N];
+    public static int[][] arr;
 
-    // (rowS, colS) ~ (rowE, colE) 사이의 금의 개수를 계산합니다.
-    public static int getNumOfGold(int rowS, int colS, int rowE, int colE) {
-        int numOfGold = 0;
+    
+    public static int calculate(int row1, int col1, int row2, int col2){
+        int sum = 0;
 
-        for(int row = rowS; row <= rowE; row++) {
-            for(int col = colS; col <= colE; col++) {
-                numOfGold += grid[row][col];
+        for (int i=row1; i<=row2; i++){
+            for (int j=col1; j<=col2; j++){
+                sum += arr[i][j];
             }
         }
-        
-        return numOfGold;
+        return sum;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+
         Scanner sc = new Scanner(System.in);
 
-        int maxGold = 0;
-
-        // 입력
         n = sc.nextInt();
-        for(int row = 0; row < n; row++)
-            for(int col = 0; col < n; col++)
-                grid[row][col] = sc.nextInt();
+        arr = new int[n][n];
+        max = 0;
+    
+        for (int i=0; i<n; i++){
+            for (int j=0; j<n; j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
         
-        // (row, col)이 3 * 3 격자의 좌측 모서리인 경우를 전부 탐색합니다. 
-        for(int row = 0; row < n; row++) {
-            for(int col = 0; col < n; col++) {
-                // 3 * 3 격자가 n * n 격자를 벗어나는 경우는 계산하지 않습니다.
-                if(row + 2 >= n || col + 2 >= n)
-                    continue;
-                
-                // 금의 개수를 계산합니다.
-                int numOfGold = getNumOfGold(row, col, row + 2, col + 2);
-
-                // 최대 금의 개수를 저장합니다.
-                maxGold = Math.max(maxGold, numOfGold);
+        for (int i=0; i<=n-3; i++){
+            for (int j=0; j<=n-3; j++){
+                int tmp = calculate(i, j, i+2, j+2);
+                if (tmp > max){
+                    max = tmp;
+                }
             }
         }
 
-        System.out.println(maxGold);
+        System.out.print(max);
     }
+
 }
