@@ -25,7 +25,8 @@ public class Main {
                 cnt ++;
                 if(check(cnt)){
                     result ++;
-                    break;
+                    cnt = 1;
+                    continue;
                 }
             } else{
                 cnt = 1;
@@ -58,6 +59,7 @@ public class Main {
         n = sc.nextInt();
         arr = new int[n][n];
         m = sc.nextInt();
+        result = 0;
 
         for (int i=0; i<n; i++){
             for (int j=0; j<n; j++){
@@ -66,8 +68,6 @@ public class Main {
         }
 
         if (m!=1){
-
-            result = 0;
             for (int i=0; i<n; i++){
                 happySequence(i);
             }
