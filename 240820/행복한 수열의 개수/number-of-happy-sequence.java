@@ -31,7 +31,6 @@ public class Main {
                 cnt = 1;
             }
         }
-        //System.out.print("첫 번째" + result);
 
         cnt = 1;
         for (int j=1; j<n; j++){
@@ -48,7 +47,6 @@ public class Main {
                 cnt = 0;
             }
         }
-        //System.out.print("두 번째" + result);
 
         return result;
     }
@@ -61,17 +59,20 @@ public class Main {
         arr = new int[n][n];
         m = sc.nextInt();
 
-        for (int i=0; i<n; i++){
-            for (int j=0; j<n; j++){
-                arr[i][j] = sc.nextInt();
+        if (m!=1){
+            for (int i=0; i<n; i++){
+                for (int j=0; j<n; j++){
+                    arr[i][j] = sc.nextInt();
+                }
             }
-        }
 
-        result = 0;
-        for (int i=0; i<n; i++){
-            happySequence(i);
+            result = 0;
+            for (int i=0; i<n; i++){
+                happySequence(i);
+            }
+        } else{
+            result = 2*n;
         }
-
 
         System.out.print(result);
     }
