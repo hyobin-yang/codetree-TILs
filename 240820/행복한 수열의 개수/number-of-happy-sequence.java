@@ -59,12 +59,13 @@ public class Main {
         arr = new int[n][n];
         m = sc.nextInt();
 
-        if (m!=1){
-            for (int i=0; i<n; i++){
-                for (int j=0; j<n; j++){
-                    arr[i][j] = sc.nextInt();
-                }
+        for (int i=0; i<n; i++){
+            for (int j=0; j<n; j++){
+                arr[i][j] = sc.nextInt();
             }
+        }
+
+        if (m!=1){
 
             result = 0;
             for (int i=0; i<n; i++){
