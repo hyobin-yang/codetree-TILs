@@ -25,8 +25,7 @@ public class Main {
                 cnt ++;
                 if(check(cnt)){
                     result ++;
-                    cnt = 1;
-                    continue;
+                    break;
                 }
             } else{
                 cnt = 1;
@@ -45,7 +44,7 @@ public class Main {
                     break;
                 }
             } else{
-                cnt = 0;
+                cnt = 1;
             }
         }
 
