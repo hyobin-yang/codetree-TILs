@@ -11,7 +11,7 @@ public class Main {
         return cnt == m;
     }
 
-    public static void happySequence(int i){
+    public static int happySequence(int i){
         
         int prev;
         int current;
