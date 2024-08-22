@@ -46,7 +46,7 @@ public class Main {
         // 모든 점을 중심점으로 하여 순회
         for (int x=0; x<n; x++){
             for (int y=0; y<n; y++){
-                for (int k=0; k<=Math.round((n+1)/2) + 1; k++){
+                for (int k=0; k <= 2*(n-1); k++){
                     int goldNum = getGoldNum(x, y, k);
 
                     if (goldNum*m >= cost(k)){
