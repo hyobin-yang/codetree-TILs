@@ -14,11 +14,12 @@ public class Main {
 
         int[] dx = new int[]{-1, -1, 1, 1};
         int[] dy = new int[]{1, -1, -1, 1};
+        int[] arr = new int[]{0, 0, 0, 0};
 
         for (int i=0; i<4; i++){
             while(true){
 
-                if (currentX+dx[i] == startX && currentY+dy[i] == startY){
+                if (currentX+dx[i] == startX && currentY+dy[i] == startY && arr[0]==arr[2]){
                     return sum;
                 }
 
@@ -26,6 +27,7 @@ public class Main {
                     currentX += dx[i];
                     currentY += dy[i];
                     sum += grid[currentX][currentY];
+                    arr[i] += 1;
                 } else{
                     break;
                 }
